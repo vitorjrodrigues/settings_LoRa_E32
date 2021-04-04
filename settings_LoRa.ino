@@ -1,7 +1,6 @@
 // Original by Emmanuel Leite de Medeiros
-// Modified by Vítor José Costa Rodrigues (30-Jun-2019)
-// Version: 1.2.1.0
-// Last Update: 04-Abr-2021.
+//  Forked  by Vítor José Costa Rodrigues (30-Jun-2019)
+// Version: 1.2.1.0 (04-Abr-2021).
 
 #include <SoftwareSerial.h>
 
