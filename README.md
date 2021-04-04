@@ -1,12 +1,15 @@
 # settings_LoRa
  
 
-*Pins*
-M0   4 (Lora Pin 1)
-M1   5 (Lora Pin 2)
-AUX  6 (Lora Pin 5)
-TX  10 (Lora Pin 4)
-RX  11 (Lora Pin 3)
+Lora Pin | Arduino Pin |
+-------- | ----------- |
+1 - M0   | 04          |
+2 - M1   | 05          |
+3 - RX   | 11          |
+4 - TX   | 10          |
+5 - AUX  | 06          |
+
+
 
 
 (Pins can be changed if needed. The Only pins not allowed are 0 and 1, which corresponds to Arduino's Main Hardware Serial.)
