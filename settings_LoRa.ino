@@ -263,7 +263,6 @@ void setSPED() {
   memset(buffr, 0, sizeof(char) * 64);
   sprintf((void *) buffr, "CMD = C0|%02X|%02X|%02X|%02X|%02X", ADDH, ADDL, SPED, CHAN, OPTION);
   Serial.println("SPED Values Updated");
-  Serial.print("SPED = ");
-  Serial.println(SPED, BIN);
+  Serial.print("SPED = "); Serial.println(SPED, BIN);
   Serial.println(buffr);
 }
