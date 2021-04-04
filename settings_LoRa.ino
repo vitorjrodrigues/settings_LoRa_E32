@@ -1,6 +1,7 @@
 // Original by Emmanuel Leite de Medeiros
 // Modified by Vítor José Costa Rodrigues (30-Jun-2019)
-// Last Update: 17-Jan-2020.
+// Version: 1.2.1.0
+// Last Update: 04-Abr-2021.
 
 #include <SoftwareSerial.h>
 
@@ -16,7 +17,6 @@ void setup() {
   pinMode(AUX, INPUT); // AUX High (1) means it's idle (may be false), AUX LOW (0) means it's busy (always)
   pinMode(M0, OUTPUT);
   pinMode(M1, OUTPUT);
-
   digitalWrite(M0, HIGH);
   digitalWrite(M1, HIGH);
   Serial.begin(9600);
@@ -77,7 +77,7 @@ void param_read_version() {
     i++;
   }
   sprintf(buf2, "C3|%02X|%02X|%02X", buf[1], buf[2], buf[3]);
-  //Serial.println(buf2);
+  Serial.println(buf2);
 }
 
 void param_read_config() {
@@ -91,7 +91,6 @@ void param_read_config() {
     buf[i] = Slora.read();
     i++;
   }
-  //Slora.flush();
   Serial.print("Read = ");
   sprintf(buf2, "%02X|%02X|%02X|%02X|%02X|%02X", buf[0], buf[1], buf[2], buf[3], buf[4], buf[5]);
   Serial.println(buf2);
