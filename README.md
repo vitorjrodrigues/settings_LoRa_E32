@@ -1,6 +1,10 @@
-# settings_LoRa
- 
+# settings_LoRa_E32
 
+This is a comprehensive interface to setup EBYTE's LoRa Modules (E32 Series).
+
+It is still a work in progress, developed in spare time by a novice Software Engineer. As such, suggestions and criticisms are welcome.
+ 
+## Pins 
 Lora Pin | Arduino Pin |
 -------- | ----------- |
 1 - M0   | 04          |
@@ -18,8 +22,8 @@ Lora Pin | Arduino Pin |
 Software Serial Library is used to create Serial Object:
 > SoftwareSerial Slora(10, 11); // TX (pin4), RX (pin3)
 
-
-void setup() : Sets Lora Module on Setup Mode. Baud Rate is set on 9600 as required in the datasheet.
+## Setting the Module
+void setup() : Sets Lora Module on Setup Mode. Baud Rate is set on 9600 as per required in the datasheet.
 
 
 The Setup packet is comprised of 6 bytes:
@@ -45,7 +49,7 @@ Option | Description | Function Executed
 0xC3 | Read Module Version | param_read_version()
 0xC4 | Reset Module | param_reset()
 
-
+## Parameter Setting Functions (ADDR and SPED*)
 void setADDR() : User Inputs Address for the Lora Module. Values can be altered freely. On the Future the user will be able to input the intended adress directly on Serial Buffer.
 
 Options Presetted:
@@ -67,7 +71,20 @@ void setSPED() : User Inputs Parameters for Lora Communication
     Option 0 | Option 1 | Option 2       | Option 3 | Option 4 | Option 5
     -------- | -------- | -------------- | -------- | -------- | --------
     300      | 1200     | 2400 (Default) | 4800     | 9600     | 19200 
-  - Channel: 
-  ***Fixed at 0x00 (410 MHz)***
-  - Options: 
+    
+ void setCHAN(): *This will be implemented in the future.
+  ***Channel is Fixed at 0x00 (410 MHz)*** 
+ 
+ void setOPTION(): *This will be implemented in the future.
   ***Default Options (0x44)***
+  
+  
+ ## Examples
+ 
+ Examples for a simple Receiver and Transmitter can be found on /Examples/ folder.
+ Please note a few important details:
+  - Serial and SoftwareSerial BAUD rates may have different values if needed, but absolute functionality is not guaranteed (further tests are needed).
+  - SoftwareSerial **MUST** have the same BAUD rate of its module. 
+  - Receiver and Transmitter, however, do not need to share the same BAUD Rate themselves.
+  - They still need to share the **SAME** Air Data Rate.
+  - Pin Presets can be changed freely (avoiding pins 0 and 1, which are reserved for Arduino's Programming Serial), just remember that LoRa TX pin is connected to SoftwareSerial RX pin and vice-versa.
