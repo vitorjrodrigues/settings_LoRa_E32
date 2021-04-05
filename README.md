@@ -1,4 +1,4 @@
-# settings_LoRa
+# settings_LoRa_E32 - Comprehensive interface to setup EBYTE's LoRa Modules (E32 Series)
  
 ## Pins 
 Lora Pin | Arduino Pin |
