@@ -1,6 +1,6 @@
 # settings_LoRa_E32
 
-This is a comprehensive interface to setup EBYTE's LoRa Modules (E32 Series).
+This is a simple and intuitive interface to setup EBYTE's LoRa Modules (E32 Series) using Arduino.
 
 It is still a work in progress, developed in spare time by a novice Software Engineer. As such, suggestions and criticisms are welcome.
  
