@@ -1,6 +1,9 @@
-// Original by Emmanuel Leite de Medeiros
-//  Forked  by Vítor José Costa Rodrigues (30-Jun-2019)
+// EBYTE E32 LoRa Serial Programmer for Arduino
+// Created by Vítor José Costa Rodrigues in 30-Jun-2019
 // Version: 1.2.1.0 (04-Abr-2021).
+//// Inspired by a similar algorithm for Tiva-C
+//// made by Emmanuel Leite de Medeiros
+
 
 #include <SoftwareSerial.h>
 
