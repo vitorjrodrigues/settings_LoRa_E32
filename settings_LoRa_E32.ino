@@ -86,8 +86,8 @@ void param_read_config() {
   int i = 0;
   char buf[16];
   char buf2[16];
-  Slora.write(LORA_READ_PARAM, 3);
-  Slora.flush();
+  //Slora.write(LORA_READ_PARAM, 3);
+  //Slora.flush();
   Slora.write(LORA_READ_PARAM, 3);
   while (Slora.available()) {
     buf[i] = Slora.read();
